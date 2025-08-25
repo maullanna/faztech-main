@@ -29,7 +29,7 @@ class Produk_model extends CI_Model
       // Debug: Log data yang akan ditambahkan
       log_message('debug', 'Adding new product with data: ' . json_encode($data));
 
-      // Set default values untuk fitur jika tidak ada
+      // Set default values untuk field sub fitur jika tidak ada
       if (!isset($data['kualitas'])) {
          $data['kualitas'] = '';
       }
@@ -44,9 +44,6 @@ class Produk_model extends CI_Model
       }
       if (!isset($data['maintenance'])) {
          $data['maintenance'] = '';
-      }
-      if (!isset($data['fitur_tambahan'])) {
-         $data['fitur_tambahan'] = '';
       }
 
       // Set default promo values
@@ -76,7 +73,7 @@ class Produk_model extends CI_Model
       // Debug: Log data yang akan diupdate
       log_message('debug', 'Updating product ID: ' . $id . ' with data: ' . json_encode($data));
 
-      // Set default values untuk fitur jika tidak ada
+      // Set default values untuk field sub fitur jika tidak ada
       if (!isset($data['kualitas'])) {
          $data['kualitas'] = '';
       }
@@ -91,9 +88,6 @@ class Produk_model extends CI_Model
       }
       if (!isset($data['maintenance'])) {
          $data['maintenance'] = '';
-      }
-      if (!isset($data['fitur_tambahan'])) {
-         $data['fitur_tambahan'] = '';
       }
 
       // Set default promo values
@@ -194,9 +188,6 @@ class Produk_model extends CI_Model
          case 'harga_tinggi':
             $this->db->order_by('harga', 'DESC');
             break;
-         case 'stok':
-            $this->db->order_by('stok', 'DESC');
-            break;
          default:
             $this->db->order_by('kategori', 'ASC');
             $this->db->order_by('nama_produk', 'ASC');
@@ -242,39 +233,16 @@ class Produk_model extends CI_Model
 
    public function ambil_produk_populer($limit = 6)
    {
-      // Untuk sementara, ambil produk berdasarkan stok tertinggi
+      // Untuk sementara, ambil produk berdasarkan tanggal terbaru
       $this->db->select('*');
-      $this->db->order_by('stok', 'DESC');
+      $this->db->order_by('tanggal_dibuat', 'DESC');
       $this->db->limit($limit);
       return $this->db->get('produk')->result();
-   }
-
-   public function cek_stok_produk($id)
-   {
-      $this->db->select('stok');
-      $this->db->where('id', $id);
-      $result = $this->db->get('produk')->row();
-      return $result ? $result->stok : 0;
-   }
-
-   public function update_stok_produk($id, $jumlah_baru)
-   {
-      $this->db->where('id', $id);
-      return $this->db->update('produk', array('stok' => $jumlah_baru));
    }
 
    public function update_fitur_produk($id, $fitur_data)
    {
       $this->db->where('id', $id);
       return $this->db->update('produk', $fitur_data);
-   }
-
-   public function ambil_produk_dengan_stok_rendah($limit = 10)
-   {
-      $this->db->select('*');
-      $this->db->where('stok <=', 5);
-      $this->db->order_by('stok', 'ASC');
-      $this->db->limit($limit);
-      return $this->db->get('produk')->result();
    }
 }

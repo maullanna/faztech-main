@@ -55,8 +55,6 @@ $this->load->view('templates/admin_header');
                         value="<?= set_value('harga', $produk->harga) ?>" required>
                     <?= form_error('harga', '<p class="text-red-500 text-sm mt-1">', '</p>') ?>
                 </div>
-
-
             </div>
 
             <!-- Fitur Utama Section -->
@@ -66,7 +64,7 @@ $this->load->view('templates/admin_header');
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="kualitas" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="ri-star-line text-yellow-500 mr-2"></i>Kualitas
+                            <i class="fas fa-check text-green-500 mr-2"></i>Kualitas
                         </label>
                         <input type="text" id="kualitas" name="kualitas"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-light focus:border-transparent outline-none"
@@ -77,7 +75,7 @@ $this->load->view('templates/admin_header');
 
                     <div>
                         <label for="garansi" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="ri-shield-line text-blue-500 mr-2"></i>Garansi
+                            <i class="fas fa-check text-green-500 mr-2"></i>Garansi
                         </label>
                         <input type="text" id="garansi" name="garansi"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-light focus:border-transparent outline-none"
@@ -88,7 +86,7 @@ $this->load->view('templates/admin_header');
 
                     <div>
                         <label for="instalasi" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="ri-tools-line text-green-500 mr-2"></i>Instalasi
+                            <i class="fas fa-check text-green-500 mr-2"></i>Instalasi
                         </label>
                         <input type="text" id="instalasi" name="instalasi"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-light focus:border-transparent outline-none"
@@ -99,7 +97,7 @@ $this->load->view('templates/admin_header');
 
                     <div>
                         <label for="support" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="ri-headset-line text-purple-500 mr-2"></i>Support
+                            <i class="fas fa-check text-green-500 mr-2"></i>Support
                         </label>
                         <input type="text" id="support" name="support"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-light focus:border-transparent outline-none"
@@ -110,24 +108,13 @@ $this->load->view('templates/admin_header');
 
                     <div>
                         <label for="maintenance" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="ri-settings-line text-orange-500 mr-2"></i>Maintenance
+                            <i class="fas fa-check text-green-500 mr-2"></i>Maintenance
                         </label>
                         <input type="text" id="maintenance" name="maintenance"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-light focus:border-transparent outline-none"
                             placeholder="Maintenance Berkala"
                             value="<?= set_value('maintenance', $produk->maintenance) ?>">
                         <p class="text-xs text-gray-500 mt-1">Contoh: Maintenance Berkala, Maintenance Gratis, dll</p>
-                    </div>
-
-                    <div>
-                        <label for="fitur_tambahan" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="ri-gift-line text-pink-500 mr-2"></i>Fitur Tambahan
-                        </label>
-                        <input type="text" id="fitur_tambahan" name="fitur_tambahan"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-light focus:border-transparent outline-none"
-                            placeholder="Fitur Tambahan"
-                            value="<?= set_value('fitur_tambahan', $produk->fitur_tambahan) ?>">
-                        <p class="text-xs text-gray-500 mt-1">Contoh: Free Training, Dokumentasi, dll</p>
                     </div>
                 </div>
             </div>

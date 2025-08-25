@@ -78,28 +78,24 @@ $this->load->view('templates/admin_header');
                                 <td class="px-6 py-4">
                                     <div class="text-sm text-gray-900 space-y-2">
                                         <div class="flex items-center">
-                                            <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
                                             <span class="font-medium"><?= $item->kualitas ?? 'Kualitas Premium' ?></span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
                                             <span class="font-medium"><?= $item->garansi ?? 'Garansi Resmi' ?></span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-tools text-green-500 mr-2"></i>
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
                                             <span class="font-medium"><?= $item->instalasi ?? 'Instalasi Gratis' ?></span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-headset text-purple-500 mr-2"></i>
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
                                             <span class="font-medium"><?= $item->support ?? 'Support 24/7' ?></span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-cog text-orange-500 mr-2"></i>
-                                            <span class="font-medium"><?= $item->maintenance ?></span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-gift text-pink-500 mr-2"></i>
-                                            <span class="font-medium"><?= $item->fitur_tambahan ?></span>
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span class="font-medium"><?= $item->maintenance ?? 'Maintenance Berkala' ?></span>
                                         </div>
                                     </div>
                                 </td>
@@ -131,7 +127,7 @@ $this->load->view('templates/admin_header');
                                     <h3 class="text-lg font-medium text-gray-900 mb-2">Belum ada paket</h3>
                                     <p class="text-gray-500 mb-4">Mulai dengan menambahkan paket pertama Anda</p>
                                     <a href="<?= base_url('admin/produk/tambah') ?>"
-                                        class="bg-secom-blue-dark text-white px-4 py-2 rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
+                                        class="bg-secom-blue-dark text-white px-6 py-3 rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
                                         <i class="fas fa-plus mr-2"></i>Tambah paket pertama
                                     </a>
                                 </div>

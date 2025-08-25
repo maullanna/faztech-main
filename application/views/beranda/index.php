@@ -485,12 +485,12 @@
                   <!-- Package Info Section -->
                   <div class="p-6 bg-white">
                      <!-- Price -->
-                     <div class="text-center mb-4" style="font-family: 'DM Sans', sans-serif;">
+                     <div class="text-left mb-4" style="font-family: 'DM Sans', sans-serif;">
                         <?php if ($item->is_promo && $item->harga_promo): ?>
-                           <div class="text-2xl font-bold text-black-600 mb-1">Rp <?= number_format($item->harga_promo, 0, ',', '.') ?></div>
-                           <div class="text-sm text-gray-400 line-through">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
+                           <div class="text-3xl font-bold text-black-600 mb-2">Rp <?= number_format($item->harga_promo, 0, ',', '.') ?></div>
+                           <div class="text-base text-gray-500 line-through">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
                         <?php else: ?>
-                           <div class="text-2xl font-bold text-gray-900 mb-1">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
+                           <div class="text-3xl font-bold text-gray-900 mb-1">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
                            <div class="text-sm text-gray-500">Paket Lengkap</div>
                         <?php endif; ?>
                      </div>
@@ -501,49 +501,46 @@
                      <!-- Core Features -->
                      <div class="mb-6">
                         <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                           <i class="ri-star-line text-primary mr-2"></i>
-                           Fitur Utama
+                              Fitur Utama
                         </h4>
+                        
+                        
+                        
+                       
+                        
                         <div class="space-y-3">
                            <?php if (!empty($item->kualitas)): ?>
                               <div class="flex items-center text-gray-700">
-                                 <i class="ri-star-line text-yellow-500 mr-3 text-lg"></i>
+                                 <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                  <span class="text-sm"><?= $item->kualitas ?></span>
                               </div>
                            <?php endif; ?>
 
                            <?php if (!empty($item->garansi)): ?>
                               <div class="flex items-center text-gray-700">
-                                 <i class="ri-shield-line text-blue-500 mr-3 text-lg"></i>
+                                 <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                  <span class="text-sm"><?= $item->garansi ?></span>
                               </div>
                            <?php endif; ?>
 
                            <?php if (!empty($item->instalasi)): ?>
                               <div class="flex items-center text-gray-700">
-                                 <i class="ri-tools-line text-green-500 mr-3 text-lg"></i>
+                                 <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                  <span class="text-sm"><?= $item->instalasi ?></span>
                               </div>
                            <?php endif; ?>
 
                            <?php if (!empty($item->support)): ?>
                               <div class="flex items-center text-gray-700">
-                                 <i class="ri-headset-line text-purple-500 mr-3 text-lg"></i>
+                                 <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                  <span class="text-sm"><?= $item->support ?></span>
                               </div>
                            <?php endif; ?>
 
                            <?php if (!empty($item->maintenance)): ?>
                               <div class="flex items-center text-gray-700">
-                                 <i class="ri-settings-line text-orange-500 mr-3 text-lg"></i>
+                                 <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                  <span class="text-sm"><?= $item->maintenance ?></span>
-                              </div>
-                           <?php endif; ?>
-
-                           <?php if (!empty($item->fitur_tambahan)): ?>
-                              <div class="flex items-center text-gray-700">
-                                 <i class="ri-gift-line text-pink-500 mr-3 text-lg"></i>
-                                 <span class="text-sm"><?= $item->fitur_tambahan ?></span>
                               </div>
                            <?php endif; ?>
                         </div>
@@ -730,7 +727,7 @@
                      alt="Client 4"
                      class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="hidden w-28 h-14 bg-gradient-to-r from-red-500 to-red-600 rounded flex items-center justify-center">
+                  <div class="hidden w-28 h-14 bg-gradient-to-r from-balck-500 to-black-600 rounded flex items-center justify-center">
                      <span class="text-white font-bold text-xs">CLIENT 4</span>
                   </div>
                </div>

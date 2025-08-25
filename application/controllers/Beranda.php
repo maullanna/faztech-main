@@ -266,31 +266,13 @@ class Beranda extends CI_Controller
         $this->load->view('beranda/kategori', $data);
     }
 
-    // Method untuk halaman profile perusahaan
+    // Halaman Profile Perusahaan
     public function profile()
     {
-        $data['judul'] = 'Profile Perusahaan - FazTech';
-
-        // Ambil data profile aktif dari database
-        $data['profile'] = $this->Profile_model->ambil_profile_aktif();
-
-        // Jika tidak ada profile aktif, gunakan data default
-        if (!$data['profile']) {
-            $data['profile'] = (object) [
-                'nama_perusahaan' => 'FazTech',
-                'deskripsi' => 'FazTech adalah perusahaan yang bergerak di bidang teknologi keamanan yang telah melayani ribuan klien di seluruh Indonesia. Kami berkomitmen untuk memberikan solusi keamanan terbaik dengan teknologi terkini dan layanan profesional.',
-                'visi' => 'Menjadi perusahaan teknologi keamanan terdepan yang mengutamakan inovasi, kualitas, dan kepuasan pelanggan dalam memberikan solusi keamanan yang handal dan terpercaya.',
-                'misi' => 'Memberikan layanan terbaik dengan teknologi terkini, tim profesional, dan komitmen tinggi untuk memastikan keamanan dan kenyamanan setiap klien kami.',
-                'tahun_berdiri' => 2020,
-                'jumlah_klien' => 500,
-                'jumlah_proyek' => 1000,
-                'alamat' => 'Jl. Contoh No. 123, Jakarta Selatan',
-                'telepon' => '+62 812-3456-7890',
-                'email' => 'info@faztech.com',
-                'website' => 'https://faztech.com'
-            ];
-        }
-
+        $data['judul'] = 'Profile Perusahaan - FazTech Security Solutions';
+        $data['meta_description'] = 'Mengenal lebih dekat FazTech Security Solutions, mitra terpercaya dalam solusi keamanan modern dengan teknologi AI terdepan dan tim teknisi bersertifikasi.';
+        $data['meta_keywords'] = 'profile perusahaan, faztech, solusi keamanan, cctv, access control, barrier gate';
+        
         $this->load->view('beranda/profile', $data);
     }
 

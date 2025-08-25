@@ -58,7 +58,6 @@ class Produk extends CI_Controller
                     'instalasi' => $this->input->post('instalasi'),
                     'support' => $this->input->post('support'),
                     'maintenance' => $this->input->post('maintenance'),
-                    'fitur_tambahan' => $this->input->post('fitur_tambahan'),
                     'is_promo' => $this->input->post('is_promo') ? 1 : 0,
                     'harga_promo' => $this->input->post('harga_promo') ?: NULL,
                     'promo_label' => $this->input->post('promo_label'),
@@ -124,7 +123,6 @@ class Produk extends CI_Controller
                     'instalasi' => $this->input->post('instalasi'),
                     'support' => $this->input->post('support'),
                     'maintenance' => $this->input->post('maintenance'),
-                    'fitur_tambahan' => $this->input->post('fitur_tambahan'),
                     'is_promo' => $this->input->post('is_promo') ? 1 : 0,
                     'harga_promo' => $this->input->post('harga_promo') ?: NULL,
                     'promo_label' => $this->input->post('promo_label'),
@@ -162,11 +160,13 @@ class Produk extends CI_Controller
             unlink('./uploads/products/' . $produk->gambar);
         }
 
-        if ($this->Produk_model->hapus_produk($id)) {
+        $result = $this->Produk_model->hapus_produk($id);
+        if ($result) {
             $this->session->set_flashdata('sukses', 'Paket berhasil dihapus!');
         } else {
             $this->session->set_flashdata('error', 'Gagal menghapus paket!');
         }
+
         redirect('admin/produk');
     }
 

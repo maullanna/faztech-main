@@ -78,46 +78,39 @@
                         <!-- Benefits Section -->
                         <div class="p-6">
                             <!-- Features List -->
-                            <div class="space-y-3 mb-6">
+                            <div class="space-y-3">
                                 <?php if (!empty($item->kualitas)): ?>
                                     <div class="flex items-center text-gray-700">
-                                        <i class="ri-star-line text-yellow-500 mr-3 text-lg"></i>
+                                        <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                         <span class="text-sm"><?= $item->kualitas ?></span>
                                     </div>
                                 <?php endif; ?>
 
                                 <?php if (!empty($item->garansi)): ?>
                                     <div class="flex items-center text-gray-700">
-                                        <i class="ri-shield-line text-blue-500 mr-3 text-lg"></i>
+                                        <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                         <span class="text-sm"><?= $item->garansi ?></span>
                                     </div>
                                 <?php endif; ?>
 
                                 <?php if (!empty($item->instalasi)): ?>
                                     <div class="flex items-center text-gray-700">
-                                        <i class="ri-tools-line text-green-500 mr-3 text-lg"></i>
+                                        <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                         <span class="text-sm"><?= $item->instalasi ?></span>
                                     </div>
                                 <?php endif; ?>
 
                                 <?php if (!empty($item->support)): ?>
                                     <div class="flex items-center text-gray-700">
-                                        <i class="ri-headset-line text-purple-500 mr-3 text-lg"></i>
+                                        <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                         <span class="text-sm"><?= $item->support ?></span>
                                     </div>
                                 <?php endif; ?>
 
                                 <?php if (!empty($item->maintenance)): ?>
                                     <div class="flex items-center text-gray-700">
-                                        <i class="ri-settings-line text-orange-500 mr-3 text-lg"></i>
+                                        <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                         <span class="text-sm"><?= $item->maintenance ?></span>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if (!empty($item->fitur_tambahan)): ?>
-                                    <div class="flex items-center text-gray-700">
-                                        <i class="ri-gift-line text-pink-500 mr-3 text-lg"></i>
-                                        <span class="text-sm"><?= $item->fitur_tambahan ?></span>
                                     </div>
                                 <?php endif; ?>
                             </div>

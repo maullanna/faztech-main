@@ -71,11 +71,11 @@ $this->load->view('templates/admin_header');
     <div class="bg-white rounded-lg shadow-md p-6">
         <h3 class="text-lg font-semibold text-gray-700 mb-4">Aksi Cepat</h3>
         <div class="space-y-3">
-            <a href="<?= base_url('produk/tambah') ?>" class="flex items-center justify-between p-3 bg-secom-blue-dark text-white rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
+            <a href="<?= base_url('admin/produk/tambah') ?>" class="flex items-center justify-between p-3 bg-secom-blue-dark text-white rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
                 <span><i class="fas fa-plus mr-2"></i>Tambah Paket</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="<?= base_url('testimoni/tambah') ?>" class="flex items-center justify-between p-3 bg-secom-blue-light text-white rounded-lg hover:bg-secom-blue-dark transition-colors duration-200">
+            <a href="<?= base_url('admin/testimoni/tambah') ?>" class="flex items-center justify-between p-3 bg-secom-blue-light text-white rounded-lg hover:bg-secom-blue-dark transition-colors duration-200">
                 <span><i class="fas fa-plus mr-2"></i>Tambah Testimoni</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
@@ -108,7 +108,7 @@ $this->load->view('templates/admin_header');
         <div class="p-6 border-b border-gray-200">
             <div class="flex justify-between items-center">
                 <h3 class="text-lg font-semibold text-gray-700">Paket Terbaru</h3>
-                <a href="<?= base_url('produk') ?>" class="text-secom-blue-dark hover:text-secom-blue-light text-sm">
+                <a href="<?= base_url('admin/produk') ?>" class="text-secom-blue-dark hover:text-secom-blue-light text-sm">
                     Lihat Semua <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
@@ -133,7 +133,7 @@ $this->load->view('templates/admin_header');
                             </div>
                             <div class="text-right">
                                 <p class="font-semibold text-secom-blue-dark">Rp <?= number_format($produk->harga, 0, ',', '.') ?></p>
-                                <p class="text-sm text-gray-600">Stok: <?= $produk->stok ?></p>
+                                <p class="text-sm text-gray-500">Paket Lengkap</p>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -149,7 +149,7 @@ $this->load->view('templates/admin_header');
         <div class="p-6 border-b border-gray-200">
             <div class="flex justify-between items-center">
                 <h3 class="text-lg font-semibold text-gray-700">Testimoni Terbaru</h3>
-                <a href="<?= base_url('testimoni') ?>" class="text-secom-blue-dark hover:text-secom-blue-light text-sm">
+                <a href="<?= base_url('admin/testimoni') ?>" class="text-secom-blue-dark hover:text-secom-blue-light text-sm">
                     Lihat Semua <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
@@ -194,7 +194,7 @@ $this->load->view('templates/admin_header');
         <div class="p-6 border-b border-gray-200">
             <div class="flex justify-between items-center">
                 <h3 class="text-lg font-semibold text-gray-700">Kontak Terbaru</h3>
-                <a href="<?= base_url('kontak') ?>" class="text-secom-blue-dark hover:text-secom-blue-light text-sm">
+                <a href="<?= base_url('admin/kontak') ?>" class="text-secom-blue-dark hover:text-secom-blue-light text-sm">
                     Lihat Semua <i class="fas fa-arrow-right ml-1"></i>
                 </a>
             </div>
@@ -218,7 +218,7 @@ $this->load->view('templates/admin_header');
                                             target="_blank" title="WhatsApp">
                                             <i class="fab fa-whatsapp"></i>
                                         </a>
-                                        <a href="<?= base_url('kontak/detail/' . $kontak->id) ?>"
+                                        <a href="<?= base_url('admin/kontak/detail/' . $kontak->id) ?>"
                                             class="text-xs bg-secom-blue-light text-white px-2 py-1 rounded hover:bg-secom-blue-dark"
                                             title="Detail">
                                             <i class="fas fa-eye"></i>

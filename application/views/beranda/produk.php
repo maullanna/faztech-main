@@ -122,40 +122,64 @@
         </div>
     </div>
 <?php endif; ?>
-
 <!-- Hero Section untuk Halaman Paket -->
 <section class="py-24 bg-gradient-to-br from-primary/10 via-blue-50 to-gray-100 relative overflow-hidden">
     <!-- Background decoration -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-10 right-10 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
         <div class="absolute bottom-10 left-10 w-48 h-48 bg-blue-500/5 rounded-full filter blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/3 to-secondary/3 rounded-full filter blur-3xl"></div>
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-12" data-aos="fade-up">
-            <nav class="text-sm text-gray-600 mb-4">
-                <a href="<?= base_url() ?>" class="hover:text-primary transition-colors">Beranda</a>
-                <span class="mx-2">/</span>
-                <span class="text-primary font-medium">Semua Paket</span>
-            </nav>
+          
 
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                <span class="text-primary">Katalog</span> Paket Lengkap
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <span class="text-primary">Solusi Keamanan</span><br>
+                <span class="text-2xl md:text-4xl text-gray-700">Terbaik untuk Rumah & Bisnis Anda</span>
             </h1>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                Jelajahi katalog paket keamanan kami yang terorganisir berdasarkan kategori
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-8">
+            Temukan paket CCTV modern yang dirancang khusus untuk menjaga orang-orang dan aset berharga Anda.
+                <span class="font-medium">Teknologi AI terdepan</span>, garansi resmi 100%, dan didukung tim teknisi bersertifikasi 
+                yang siap melindungi properti Anda 24/7.
             </p>
 
-            <!-- Stats -->
-            <div class="flex justify-center items-center space-x-8 mt-8">
-                <div class="text-center">
-                    <div class="text-2xl font-bold text-primary"><?= $total_semua_produk ?></div>
-                    <div class="text-sm text-gray-600">Total Paket</div>
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center items-center gap-8 mt-10">
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-shield-alt text-primary text-xl"></i>
+                    <span class="font-medium">Garansi Resmi</span>
                 </div>
-                <div class="w-px h-12 bg-gray-300"></div>
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-tools text-primary text-xl"></i>
+                    <span class="font-medium">Instalasi Profesional</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-headset text-primary text-xl"></i>
+                    <span class="font-medium">Support 24/7</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-600">
+                    <i class="fas fa-truck text-primary text-xl"></i>
+                    <span class="font-medium">Gratis Survey Lokasi</span>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex justify-center items-center space-x-12 mt-12">
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-primary"><?= count($kategori_produk) ?></div>
+                    <div class="text-3xl md:text-4xl font-bold text-primary"><?= $total_semua_produk ?></div>
+                    <div class="text-sm text-gray-600">Paket Tersedia</div>
+                </div>
+                <div class="w-px h-16 bg-gray-300"></div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-primary"><?= count($kategori_produk) ?></div>
                     <div class="text-sm text-gray-600">Kategori</div>
+                </div>
+                <div class="w-px h-16 bg-gray-300"></div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-primary">100%</div>
+                    <div class="text-sm text-gray-600">Original</div>
                 </div>
             </div>
         </div>
@@ -163,25 +187,26 @@
 </section>
 
 <!-- Filter dan Pencarian Section -->
-<section class="py-8 bg-white border-b border-gray-200 top-16 z-30 shadow-sm">
+<section class="py-8 bg-white border-b border-gray-200 sticky top-16 z-30 shadow-sm backdrop-blur-sm bg-white/95">
     <div class="container mx-auto px-4">
         <form method="GET" action="<?= base_url('produk') ?>" class="flex flex-col md:flex-row gap-4 items-start md:items-center md:justify-between">
-            <!-- Search Bar - Full Width on Mobile, Fixed Width on Desktop -->
+            <!-- Search Bar -->
             <div class="w-full md:flex-1 md:max-w-md">
-                <div class="relative">
+                <div class="relative group">
                     <input type="text" name="search"
                         value="<?= htmlspecialchars($kata_kunci) ?>"
-                        placeholder="Cari paket keamanan..."
-                        class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white">
-                    <i class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        placeholder="Cari paket keamanan yang sesuai kebutuhan..."
+                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 bg-gray-50 hover:bg-white group-hover:border-primary/50">
+                    <i class="ri-search-line absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors text-lg"></i>
                 </div>
             </div>
-            <!-- Filter Controls - Stack on Mobile, Horizontal on Desktop -->
+            
+            <!-- Filter Controls -->
             <div class="flex flex-col sm:flex-row md:flex-row gap-3 sm:gap-4 w-full md:w-auto md:flex-wrap md:items-center">
                 <!-- Kategori Filter -->
-                <div class="relative w-full sm:flex-1 md:w-auto">
+                <div class="relative w-full sm:flex-1 md:w-auto group">
                     <select name="kategori"
-                        class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 w-full md:min-w-[150px]">
+                        class="appearance-none bg-white border-2 border-gray-200 rounded-2xl px-5 py-4 pr-10 focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 w-full md:min-w-[180px] group-hover:border-primary/50">
                         <option value="">Semua Kategori</option>
                         <?php foreach ($kategori_produk as $kategori): ?>
                             <option value="<?= $kategori->kategori ?>" <?= ($kategori_terpilih == $kategori->kategori) ? 'selected' : '' ?>>
@@ -189,13 +214,13 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
-                    <i class="ri-arrow-down-s-line absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    <i class="ri-arrow-down-s-line absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors pointer-events-none text-lg"></i>
                 </div>
 
                 <!-- Urutan Filter -->
-                <div class="relative w-full sm:flex-1 md:w-auto">
+                <div class="relative w-full sm:flex-1 md:w-auto group">
                     <select name="urutan"
-                        class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 w-full md:min-w-[150px]">
+                        class="appearance-none bg-white border-2 border-gray-200 rounded-2xl px-5 py-4 pr-10 focus:ring-4 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 w-full md:min-w-[180px] group-hover:border-primary/50">
                         <option value="terbaru" <?= ($urutan_terpilih == 'terbaru') ? 'selected' : '' ?>>Terbaru</option>
                         <option value="terlama" <?= ($urutan_terpilih == 'terlama') ? 'selected' : '' ?>>Terlama</option>
                         <option value="nama_asc" <?= ($urutan_terpilih == 'nama_asc') ? 'selected' : '' ?>>Nama A-Z</option>
@@ -203,62 +228,66 @@
                         <option value="harga_asc" <?= ($urutan_terpilih == 'harga_asc') ? 'selected' : '' ?>>Harga Terendah</option>
                         <option value="harga_desc" <?= ($urutan_terpilih == 'harga_desc') ? 'selected' : '' ?>>Harga Tertinggi</option>
                     </select>
-                    <i class="ri-arrow-down-s-line absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    <i class="ri-arrow-down-s-line absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors pointer-events-none text-lg"></i>
                 </div>
 
                 <!-- Submit Button -->
                 <button type="submit"
-                    class="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-all duration-200 font-medium flex items-center justify-center w-full sm:w-auto md:w-auto">
-                    <i class="ri-search-line mr-2"></i>
-                    Cari
+                    class="bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-2xl hover:from-primary/90 hover:to-primary transition-all duration-300 font-semibold flex items-center justify-center w-full sm:w-auto md:w-auto shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <i class="ri-search-line mr-3 text-lg"></i>
+                    Cari Paket
                 </button>
 
                 <!-- Reset Button -->
                 <a href="<?= base_url('produk') ?>"
-                    class="border border-gray-300 text-gray-700 px-6 py-3 rounded-xl hover:bg-gray-50 transition-all duration-200 font-medium flex items-center justify-center w-full sm:w-auto md:w-auto">
-                    <i class="ri-refresh-line mr-2"></i>
+                    class="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-2xl hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 font-semibold flex items-center justify-center w-full sm:w-auto md:w-auto">
+                    <i class="ri-refresh-line mr-3 text-lg"></i>
                     Reset
                 </a>
             </div>
         </form>
 
         <!-- Result Info -->
-        <div class="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-sm text-gray-600">
-            <div class="flex flex-wrap items-center gap-2">
+        <div class="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 text-sm text-gray-600">
+            <div class="flex flex-wrap items-center gap-3">
                 <?php if (!empty($kata_kunci) || !empty($kategori_terpilih)): ?>
-                    <span>Menampilkan hasil untuk:</span>
+                    <span class="font-medium">Menampilkan hasil untuk:</span>
                     <?php if (!empty($kata_kunci)): ?>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded-md font-medium">"<?= htmlspecialchars($kata_kunci) ?>"</span>
+                        <span class="bg-primary/10 text-primary px-3 py-2 rounded-xl font-medium border border-primary/20">"<?= htmlspecialchars($kata_kunci) ?>"</span>
                     <?php endif; ?>
                     <?php if (!empty($kategori_terpilih)): ?>
-                        <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-md font-medium"><?= $kategori_terpilih ?></span>
+                        <span class="bg-blue-100 text-blue-700 px-3 py-2 rounded-xl font-medium border border-blue-200"><?= $kategori_terpilih ?></span>
                     <?php endif; ?>
                 <?php else: ?>
-                    <span>Menampilkan semua paket</span>
+                    <span class="text-gray-500">Menampilkan semua paket keamanan</span>
                 <?php endif; ?>
             </div>
             <div class="text-right sm:text-left">
-                <span class="font-medium"><?= $total_produk ?></span> paket ditemukan
+                <span class="font-bold text-lg text-primary"><?= $total_produk ?></span>
+                <span class="text-gray-600"> paket ditemukan</span>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Daftar Paket Section -->
-<section class="py-12 bg-gray-50">
+<section class="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-50/50">
     <div class="container mx-auto px-4">
         <?php if (empty($produk)): ?>
             <!-- No Products Found -->
-            <div class="text-center py-20">
+            <div class="text-center py-24">
                 <div class="flex flex-col items-center">
-                    <i class="ri-search-line ri-4x text-gray-300 mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Tidak Ada Paket Ditemukan</h3>
-                    <p class="text-gray-600 mb-6 max-w-md">
+                    <div class="w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mb-8">
+                        <i class="ri-search-line text-6xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Tidak Ada Paket Ditemukan</h3>
+                    <p class="text-gray-600 mb-8 max-w-lg text-lg leading-relaxed">
                         Maaf, tidak ada paket yang sesuai dengan kriteria pencarian Anda.
                         Coba ubah kata kunci atau filter yang digunakan.
                     </p>
                     <a href="<?= base_url('produk') ?>"
-                        class="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors font-medium">
+                        class="bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-4 rounded-2xl hover:from-primary/90 hover:to-primary transition-colors font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <i class="ri-refresh-line mr-3"></i>
                         Lihat Semua Paket
                     </a>
                 </div>
@@ -306,12 +335,12 @@
                         <!-- Package Info Section -->
                         <div class="p-6 bg-white">
                             <!-- Price -->
-                            <div class="text-center mb-4" style="font-family: 'DM Sans', sans-serif;">
+                            <div class="text-left mb-4" style="font-family: 'DM Sans', sans-serif;">
                                 <?php if ($item->is_promo && $item->harga_promo): ?>
-                                    <div class="text-2xl font-bold text-black-600 mb-1">Rp <?= number_format($item->harga_promo, 0, ',', '.') ?></div>
-                                    <div class="text-sm text-gray-400 line-through">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
+                                    <div class="text-3xl font-bold text-black-600 mb-2">Rp <?= number_format($item->harga_promo, 0, ',', '.') ?></div>
+                                    <div class="text-base text-gray-500 line-through">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
                                 <?php else: ?>
-                                    <div class="text-xl font-bold text-gray-900 mb-1">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
+                                    <div class="text-3xl font-bold text-gray-900 mb-1">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
                                     <div class="text-sm text-gray-500">Paket Lengkap</div>
                                 <?php endif; ?>
                             </div>
@@ -321,49 +350,41 @@
                             <!-- Core Features -->
                             <div class="mb-6">
                                 <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                                    <i class="ri-star-line text-primary mr-2"></i>
                                     Fitur Utama
                                 </h4>
                                 <div class="space-y-3">
                                     <?php if (!empty($item->kualitas)): ?>
                                         <div class="flex items-center text-gray-700">
-                                            <i class="ri-star-line text-yellow-500 mr-3 text-lg"></i>
+                                            <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                             <span class="text-sm"><?= $item->kualitas ?></span>
                                         </div>
                                     <?php endif; ?>
 
                                     <?php if (!empty($item->garansi)): ?>
                                         <div class="flex items-center text-gray-700">
-                                            <i class="ri-shield-line text-blue-500 mr-3 text-lg"></i>
+                                            <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                             <span class="text-sm"><?= $item->garansi ?></span>
                                         </div>
                                     <?php endif; ?>
 
                                     <?php if (!empty($item->instalasi)): ?>
                                         <div class="flex items-center text-gray-700">
-                                            <i class="ri-tools-line text-green-500 mr-3 text-lg"></i>
+                                            <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                             <span class="text-sm"><?= $item->instalasi ?></span>
                                         </div>
                                     <?php endif; ?>
 
                                     <?php if (!empty($item->support)): ?>
                                         <div class="flex items-center text-gray-700">
-                                            <i class="ri-headset-line text-purple-500 mr-3 text-lg"></i>
+                                            <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                             <span class="text-sm"><?= $item->support ?></span>
                                         </div>
                                     <?php endif; ?>
 
                                     <?php if (!empty($item->maintenance)): ?>
                                         <div class="flex items-center text-gray-700">
-                                            <i class="ri-settings-line text-orange-500 mr-3 text-lg"></i>
+                                            <i class="fas fa-check text-green-500 mr-3 text-lg"></i>
                                             <span class="text-sm"><?= $item->maintenance ?></span>
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <?php if (!empty($item->fitur_tambahan)): ?>
-                                        <div class="flex items-center text-gray-700">
-                                            <i class="ri-gift-line text-pink-500 mr-3 text-lg"></i>
-                                            <span class="text-sm"><?= $item->fitur_tambahan ?></span>
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -371,7 +392,7 @@
 
                             <!-- Service Info -->
                             <div class="mb-6">
-                                <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-4 border border-blue-100">
                                     <div class="text-center">
                                         <p class="text-sm text-gray-700 font-medium">Paket Terima Beres + Instalasi</p>
                                     </div>
@@ -384,7 +405,7 @@
                             <!-- Action Button -->
                             <div class="text-center mt-6">
                                 <button onclick="generateWhatsAppLink('<?= $item->nama_produk ?>', <?= ($item->is_promo && $item->harga_promo) ? $item->harga_promo : $item->harga ?>)"
-                                    class="w-full bg-green-500 text-white py-4 px-6 rounded-xl hover:bg-green-600 transition-all duration-200 font-semibold text-lg flex items-center justify-center">
+                                    class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold text-lg flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                     <i class="ri-whatsapp-line mr-3 text-xl"></i>
                                     Order Now
                                 </button>
