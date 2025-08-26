@@ -996,52 +996,56 @@
 <!-- Script untuk carousel hero -->
 <script>
    document.addEventListener('DOMContentLoaded', function() {
+      // Carousel functionality - only if elements exist
       const slides = document.querySelectorAll('.carousel-slide');
       const indicators = document.querySelectorAll('.carousel-indicator');
-      let currentIndex = 0;
-      const interval = 5000;
+      
+      if (slides.length > 0 && indicators.length > 0) {
+         let currentIndex = 0;
+         const interval = 5000;
 
-      function showSlide(index) {
-         slides.forEach(slide => {
-            slide.classList.add('opacity-0');
+         function showSlide(index) {
+            slides.forEach(slide => {
+               slide.classList.add('opacity-0');
+            });
+
+            indicators.forEach(indicator => {
+               indicator.classList.remove('active');
+               indicator.classList.remove('bg-white/70');
+               indicator.classList.add('bg-white/30');
+            });
+
+            slides[index].classList.remove('opacity-0');
+
+            indicators[index].classList.add('active');
+            indicators[index].classList.remove('bg-white/30');
+            indicators[index].classList.add('bg-white/70');
+
+            // Update current index
+            currentIndex = index;
+         }
+
+         indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+               showSlide(index);
+               resetTimer();
+            });
          });
 
-         indicators.forEach(indicator => {
-            indicator.classList.remove('active');
-            indicator.classList.remove('bg-white/70');
-            indicator.classList.add('bg-white/30');
-         });
+         let timer = setInterval(nextSlide, interval);
 
-         slides[index].classList.remove('opacity-0');
+         function nextSlide() {
+            let nextIndex = (currentIndex + 1) % slides.length;
+            showSlide(nextIndex);
+         }
 
-         indicators[index].classList.add('active');
-         indicators[index].classList.remove('bg-white/30');
-         indicators[index].classList.add('bg-white/70');
+         function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(nextSlide, interval);
+         }
 
-         // Update current index
-         currentIndex = index;
+         showSlide(0);
       }
-
-      indicators.forEach((indicator, index) => {
-         indicator.addEventListener('click', () => {
-            showSlide(index);
-            resetTimer();
-         });
-      });
-
-      let timer = setInterval(nextSlide, interval);
-
-      function nextSlide() {
-         let nextIndex = (currentIndex + 1) % slides.length;
-         showSlide(nextIndex);
-      }
-
-      function resetTimer() {
-         clearInterval(timer);
-         timer = setInterval(nextSlide, interval);
-      }
-
-      showSlide(0);
 
       // Auto-hide flash messages after 5 seconds
       setTimeout(function() {

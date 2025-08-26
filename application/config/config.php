@@ -1,11 +1,30 @@
 <?php
-// application/config/config.php (bagian penting saja)
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// Untuk development dengan Laragon
-$config['base_url'] = 'http://localhost/faztech-main/';
-$config['index_page'] = '';
+/**
+ * Prioritaskan header dari reverse proxy (ngrok):
+ * - HTTP_X_FORWARDED_HOST  : host asli (xxxx.ngrok-free.app)
+ * - HTTP_X_FORWARDED_PROTO : skema asli (https)
+ * Fallback ke HTTP_HOST/HTTPS lokal bila header tidak ada.
+ */
+$host = $_SERVER['HTTP_X_FORWARDED_HOST']
+     ?? $_SERVER['HTTP_HOST']
+     ?? 'localhost';
+
+$proto = $_SERVER['HTTP_X_FORWARDED_PROTO']
+      ?? ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http');
+
+$config['base_url'] = rtrim($proto.'://'.$host, '/') . '/';
+
+/* (opsional, tapi rapi buat debug) */
+error_log("FAZTECH DEBUG: XFH = ".($_SERVER['HTTP_X_FORWARDED_HOST'] ?? '-')
+        .", XFP = ".($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '-')
+        .", HOST = ".($_SERVER['HTTP_HOST'] ?? '-')
+        .", base_url = ".$config['base_url']);
+
+$config['index_page']   = '';
 $config['uri_protocol'] = 'REQUEST_URI';
+
 $config['url_suffix'] = '';
 $config['language'] = 'english';
 $config['charset'] = 'UTF-8';
