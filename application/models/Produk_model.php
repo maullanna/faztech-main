@@ -245,4 +245,89 @@ class Produk_model extends CI_Model
       $this->db->where('id', $id);
       return $this->db->update('produk', $fitur_data);
    }
+
+   public function get_product_by_name($nama_produk)
+   {
+      $this->db->select('*');
+      $this->db->where('nama_produk', $nama_produk);
+      return $this->db->get('produk')->row();
+   }
+
+   public function bulk_insert_products($products_data)
+   {
+      return $this->db->insert_batch('produk', $products_data);
+   }
+
+   public function bulk_update_products($products_data)
+   {
+      $success_count = 0;
+      foreach ($products_data as $product) {
+         if (isset($product['id']) && $this->db->update('produk', $product, array('id' => $product['id']))) {
+            $success_count++;
+         }
+      }
+      return $success_count;
+   }
+
+   // Method untuk filter produk
+   public function filter_produk($search = '', $kategori = '', $brand = '', $min_harga = '', $max_harga = '')
+   {
+      $this->db->select('*');
+      
+      // Filter berdasarkan nama produk (search)
+      if (!empty($search)) {
+         $this->db->group_start();
+         $this->db->like('nama_produk', $search);
+         $this->db->or_like('deskripsi', $search);
+         $this->db->group_end();
+      }
+      
+      // Filter berdasarkan kategori
+      if (!empty($kategori)) {
+         $this->db->where('kategori', $kategori);
+      }
+      
+      // Filter berdasarkan brand (Hikvision/Dahua)
+      if (!empty($brand)) {
+         $this->db->like('nama_produk', $brand);
+      }
+      
+      // Filter berdasarkan range harga
+      if (!empty($min_harga) && is_numeric($min_harga)) {
+         $this->db->where('harga >=', $min_harga);
+      }
+      
+      if (!empty($max_harga) && is_numeric($max_harga)) {
+         $this->db->where('harga <=', $max_harga);
+      }
+      
+      // Urutan default
+      $this->db->order_by('kategori', 'ASC');
+      $this->db->order_by('nama_produk', 'ASC');
+      
+      return $this->db->get('produk')->result();
+   }
+   
+   // Method untuk mendapatkan list kategori
+   public function get_kategori_list()
+   {
+      $this->db->select('DISTINCT(kategori) as kategori', FALSE);
+      $this->db->from('produk');
+      $this->db->order_by('kategori', 'ASC');
+      $result = $this->db->get()->result();
+      
+      $kategori_list = array();
+      foreach ($result as $row) {
+         $kategori_list[] = $row->kategori;
+      }
+      
+      return $kategori_list;
+   }
+   
+   // Method untuk mendapatkan list brand
+   public function get_brand_list()
+   {
+      $brands = array('Hikvision', 'Dahua');
+      return $brands;
+   }
 }

@@ -625,43 +625,85 @@
             <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
 
             <!-- Testimoni Container -->
-            <div class="overflow-hidden p-8">
-               <div class="testimoni-scroll flex space-x-8 items-stretch animate-testimoni-scroll">
+            <div class="overflow-hidden p-4 sm:p-6 lg:p-8">
+               <div class="testimoni-scroll flex space-x-4 sm:space-x-6 lg:space-x-8 items-stretch animate-testimoni-scroll">
                   <?php foreach ($testimoni_terbaru as $testimoni): ?>
-                     <div class="flex-shrink-0 w-80">
-                        <div class="bg-white rounded-xl shadow-lg p-8 h-full flex flex-col hover:cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 group">
+                     <div class="flex-shrink-0 w-72 sm:w-80 lg:w-80">
+                        <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 h-full flex flex-col hover:cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 group">
                            <!-- Quote Icon -->
-                           <div class="text-primary/20 group-hover:text-primary/30 mb-4 transition-all duration-300">
-                              <i class="ri-double-quotes-l ri-3x"></i>
+                           <div class="text-primary/20 group-hover:text-primary/30 mb-3 sm:mb-4 transition-all duration-300">
+                              <i class="ri-double-quotes-l text-2xl sm:text-3xl lg:ri-3x"></i>
                            </div>
                            <!-- Testimoni Text -->
-                           <p class="text-gray-700 group-hover:text-gray-800 italic mb-6 flex-grow transition-all duration-300">"<?= $testimoni->deskripsi ?>"</p>
+                           <p class="text-sm sm:text-base text-gray-700 group-hover:text-gray-800 italic mb-4 sm:mb-6 flex-grow transition-all duration-300 leading-relaxed">"<?= $testimoni->deskripsi ?>"</p>
                            <!-- Rating -->
-                           <div class="flex items-center mb-4">
+                           <div class="flex items-center mb-3 sm:mb-4">
                               <?php for ($i = 1; $i <= 5; $i++): ?>
                                  <?php if ($i <= $testimoni->rating): ?>
-                                    <i class="ri-star-fill text-yellow-400 group-hover:text-yellow-500 transition-all duration-300 group-hover:scale-110"></i>
+                                    <i class="ri-star-fill text-yellow-400 group-hover:text-yellow-500 transition-all duration-300 group-hover:scale-110 text-sm sm:text-base"></i>
                                  <?php else: ?>
-                                    <i class="ri-star-line text-gray-300 group-hover:text-gray-400 transition-all duration-300"></i>
+                                    <i class="ri-star-line text-gray-300 group-hover:text-gray-400 transition-all duration-300 text-sm sm:text-base"></i>
                                  <?php endif; ?>
                               <?php endfor; ?>
                            </div>
                            <!-- Author -->
                            <div class="flex items-center">
-                              <div class="w-12 h-12 rounded-full overflow-hidden mr-4 group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4 group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
                                  <?php if (!empty($testimoni->gambar)): ?>
                                     <img src="<?= base_url('uploads/testimonials/' . $testimoni->gambar) ?>"
                                        alt="<?= $testimoni->nama ?>"
                                        class="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300">
                                  <?php else: ?>
                                     <div class="w-full h-full flex items-center justify-center bg-gray-200 rounded-full group-hover:bg-primary/10 transition-all duration-300">
-                                       <i class="ri-user-line text-gray-400 group-hover:text-primary transition-all duration-300"></i>
+                                       <i class="ri-user-line text-gray-400 group-hover:text-primary transition-all duration-300 text-sm sm:text-base"></i>
                                     </div>
                                  <?php endif; ?>
                               </div>
                               <div>
-                                 <h4 class="font-bold text-gray-900 group-hover:text-primary transition-colors duration-300"><?= $testimoni->nama ?></h4>
-                                 <p class="text-sm text-gray-600 group-hover:text-gray-700 transition-all duration-300"><?= $testimoni->jabatan ?></p>
+                                 <h4 class="font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base"><?= $testimoni->nama ?></h4>
+                                 <p class="text-xs sm:text-sm text-gray-600 group-hover:text-gray-700 transition-all duration-300"><?= $testimoni->jabatan ?></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  <?php endforeach; ?>
+                  
+                  <!-- Duplicate testimonials for seamless loop -->
+                  <?php foreach ($testimoni_terbaru as $testimoni): ?>
+                     <div class="flex-shrink-0 w-72 sm:w-80 lg:w-80">
+                        <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 h-full flex flex-col hover:cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 group">
+                           <!-- Quote Icon -->
+                           <div class="text-primary/20 group-hover:text-primary/30 mb-3 sm:mb-4 transition-all duration-300">
+                              <i class="ri-double-quotes-l text-2xl sm:text-3xl lg:ri-3x"></i>
+                           </div>
+                           <!-- Testimoni Text -->
+                           <p class="text-sm sm:text-base text-gray-700 group-hover:text-gray-800 italic mb-4 sm:mb-6 flex-grow transition-all duration-300 leading-relaxed">"<?= $testimoni->deskripsi ?>"</p>
+                           <!-- Rating -->
+                           <div class="flex items-center mb-3 sm:mb-4">
+                              <?php for ($i = 1; $i <= 5; $i++): ?>
+                                 <?php if ($i <= $testimoni->rating): ?>
+                                    <i class="ri-star-fill text-yellow-400 group-hover:text-yellow-500 transition-all duration-300 group-hover:scale-110 text-sm sm:text-base"></i>
+                                 <?php else: ?>
+                                    <i class="ri-star-line text-gray-300 group-hover:text-gray-400 transition-all duration-300 text-sm sm:text-base"></i>
+                                 <?php endif; ?>
+                              <?php endfor; ?>
+                           </div>
+                           <!-- Author -->
+                           <div class="flex items-center">
+                              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden mr-3 sm:mr-4 group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                                 <?php if (!empty($testimoni->gambar)): ?>
+                                    <img src="<?= base_url('uploads/testimonials/' . $testimoni->gambar) ?>"
+                                       alt="<?= $testimoni->nama ?>"
+                                       class="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300">
+                                 <?php else: ?>
+                                    <div class="w-full h-full flex items-center justify-center bg-gray-200 rounded-full group-hover:bg-primary/10 transition-all duration-300">
+                                       <i class="ri-user-line text-gray-400 group-hover:text-primary transition-all duration-300 text-sm sm:text-base"></i>
+                                    </div>
+                                 <?php endif; ?>
+                              </div>
+                              <div>
+                                 <h4 class="font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base"><?= $testimoni->nama ?></h4>
+                                 <p class="text-xs sm:text-sm text-gray-600 group-hover:text-gray-700 transition-all duration-300"><?= $testimoni->jabatan ?></p>
                               </div>
                            </div>
                         </div>

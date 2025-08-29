@@ -5,10 +5,105 @@ $this->load->view('templates/admin_header');
 <div class="flex-1 p-6">
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold text-gray-800">Katalog Paket</h2>
-        <a href="<?= base_url('admin/produk/tambah') ?>"
-            class="bg-secom-blue-dark text-white px-4 py-2 rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
-            <i class="fas fa-plus mr-2"></i>Tambah Paket
-        </a>
+        <div class="flex space-x-3">
+            <a href="<?= base_url('admin/produk/import') ?>"
+                class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                <i class="fas fa-file-import mr-2"></i>Import Produk
+            </a>
+            <a href="<?= base_url('admin/produk/tambah') ?>"
+                class="bg-secom-blue-dark text-white px-4 py-2 rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
+                <i class="fas fa-plus mr-2"></i>Tambah Paket
+            </a>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">
+            <i class="fas fa-filter mr-2 text-secom-blue-dark"></i>Filter Produk
+        </h3>
+        
+        <form method="GET" action="<?= base_url('admin/produk') ?>" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <!-- Search Nama Produk -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Cari Nama Produk</label>
+                <input type="text" name="search" value="<?= $active_filters['search'] ?? '' ?>" 
+                       placeholder="Cari paket..." 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-dark focus:border-transparent">
+            </div>
+            
+            <!-- Filter Kategori -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
+                <select name="kategori" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-dark focus:border-transparent">
+                    <option value="">Semua Kategori</option>
+                    <?php foreach ($kategori_list as $kat): ?>
+                        <option value="<?= $kat ?>" <?= ($active_filters['kategori'] == $kat) ? 'selected' : '' ?>>
+                            <?= $kat ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            
+            <!-- Filter Brand -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+                <select name="brand" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-dark focus:border-transparent">
+                    <option value="">Semua Brand</option>
+                    <?php foreach ($brand_list as $brand): ?>
+                        <option value="<?= $brand ?>" <?= ($active_filters['brand'] == $brand) ? 'selected' : '' ?>>
+                            <?= $brand ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            
+            <!-- Filter Harga Minimum -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Harga Min</label>
+                <input type="number" name="min_harga" value="<?= $active_filters['min_harga'] ?? '' ?>" 
+                       placeholder="0" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-dark focus:border-transparent">
+            </div>
+            
+            <!-- Filter Harga Maximum -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Harga Max</label>
+                <input type="number" name="max_harga" value="<?= $active_filters['max_harga'] ?? '' ?>" 
+                       placeholder="99999999" 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secom-blue-dark focus:border-transparent">
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="md:col-span-2 lg:col-span-5 flex space-x-3">
+                <button type="submit" class="bg-secom-blue-dark text-white px-6 py-2 rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
+                    <i class="fas fa-search mr-2"></i>Filter
+                </button>
+                <a href="<?= base_url('admin/produk') ?>" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-200">
+                    <i class="fas fa-times mr-2"></i>Reset
+                </a>
+            </div>
+        </form>
+        
+        <!-- Active Filters Display -->
+        <?php if (!empty(array_filter($active_filters))): ?>
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm font-medium text-gray-700">Filter Aktif:</span>
+                    <?php foreach ($active_filters as $key => $value): ?>
+                        <?php if (!empty($value)): ?>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secom-blue-dark text-white">
+                                <?= ucfirst($key) ?>: <?= $value ?>
+                                <a href="<?= base_url('admin/produk?' . http_build_query(array_merge($active_filters, [$key => '']))) ?>" 
+                                   class="ml-2 text-white hover:text-gray-200">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </span>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php if ($this->session->flashdata('sukses')): ?>
@@ -148,6 +243,9 @@ $this->load->view('templates/admin_header');
                     </div>
                     <div class="text-right">
                         <span class="font-medium">Total: <?= count($produk) ?> paket</span>
+                        <?php if (!empty(array_filter($active_filters))): ?>
+                            <span class="text-secom-blue-dark ml-2">(Hasil Filter)</span>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

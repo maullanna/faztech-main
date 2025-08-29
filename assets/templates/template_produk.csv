@@ -1,0 +1,6 @@
+nama_produk,kategori,harga,kualitas,garansi,instalasi,support,maintenance,is_promo,harga_promo,promo_label,deskripsi,gambar
+Paket CCTV Premium,CCTV,5000000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Berkala,1,4500000,Promo Spesial,Paket CCTV lengkap dengan 8 kamera HD dan DVR 8 channel,cctv_premium.jpg
+Paket Access Control,Access Control,3500000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Berkala,0,,,Sistem kontrol akses dengan fingerprint dan card reader,access_control.jpg
+Paket Barrier Gate,Barrier Gate,2800000,Kualitas Standard,Garansi 1 Tahun,Instalasi Berbayar,Support 8 Jam,Maintenance Berbayar,1,2500000,Discon 10%,Barrier gate otomatis dengan remote control,barrier_gate.jpg
+Paket Internet Dedicated,Internet Dedicated,1500000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Gratis,0,,,Koneksi internet dedicated dengan bandwidth stabil,internet_dedicated.jpg
+Paket Smart Solution,Smart Solution,8000000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Berkala,1,7200000,Promo Awal Tahun,Solusi smart home lengkap dengan IoT devices,smart_solution.jpg

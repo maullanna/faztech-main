@@ -7,7 +7,7 @@
     <title><?= $judul ?? 'FazTech - Solusi Keamanan Profesional' ?></title>
 
     <!-- Tailwind CSS - Stable Version -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -58,6 +58,12 @@
     <!-- AOS Animate on Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Animations -->
+    <link href="<?= base_url('assets/css/animations.css') ?>" rel="stylesheet">
+    
+    <!-- Custom Animation Scripts -->
+    <script src="<?= base_url('assets/js/animations.js') ?>" defer></script>
 
     <style>
         :where([class^="ri-"])::before {

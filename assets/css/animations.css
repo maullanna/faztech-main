@@ -1,0 +1,87 @@
+/* Professional Testimoni Scroll Animation */
+@keyframes testimoni-scroll {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.testimoni-scroll {
+    animation: testimoni-scroll 180s linear infinite;
+    width: max-content;
+    display: flex;
+}
+
+.testimoni-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Ensure smooth scrolling */
+.testimoni-scroll > div {
+    flex-shrink: 0;
+}
+
+/* Professional Partners Scroll Animation */
+@keyframes partners-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logos-scroll {
+    animation: partners-scroll 25s linear infinite;
+    width: max-content;
+}
+
+.logos-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Smooth transitions for all elements */
+.testimoni-scroll > div,
+.logos-scroll > div {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hover effects */
+.testimoni-scroll > div:hover,
+.logos-scroll > div:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimoni-scroll {
+        animation-duration: 120s;
+    }
+    
+    .logos-scroll {
+        animation-duration: 18s;
+    }
+    
+    /* Mobile spacing adjustments */
+    .testimoni-scroll > div {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimoni-scroll {
+        animation-duration: 90s;
+    }
+    
+    .logos-scroll {
+        animation-duration: 12s;
+    }
+    
+    /* Small mobile adjustments */
+    .testimoni-scroll > div {
+        margin-right: 0.75rem;
+    }
+}

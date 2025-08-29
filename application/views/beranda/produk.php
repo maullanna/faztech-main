@@ -141,8 +141,7 @@
             </h1>
             <p class="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-8">
             Temukan paket CCTV modern yang dirancang khusus untuk menjaga orang-orang dan aset berharga Anda.
-                <span class="font-medium">Teknologi AI terdepan</span>, garansi resmi 100%, dan didukung tim teknisi bersertifikasi 
-                yang siap melindungi properti Anda 24/7.
+                <span class="font-medium">Dilengkapi teknologi canggih, garansi resmi, serta instalasi oleh teknisi berpengalaman.</span>
             </p>
 
             <!-- Trust Indicators -->
@@ -340,7 +339,7 @@
                                     <div class="text-3xl font-bold text-black-600 mb-2">Rp <?= number_format($item->harga_promo, 0, ',', '.') ?></div>
                                     <div class="text-base text-gray-500 line-through">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
                                 <?php else: ?>
-                                    <div class="text-3xl font-bold text-gray-900 mb-1">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
+                                    <div class="text-3xl font-bold text-grred0 mb-1">Rp <?= number_format($item->harga, 0, ',', '.') ?></div>
                                     <div class="text-sm text-gray-500">Paket Lengkap</div>
                                 <?php endif; ?>
                             </div>
@@ -392,7 +391,7 @@
 
                             <!-- Service Info -->
                             <div class="mb-6">
-                                <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-4 border border-blue-100">
+                                <div class="bg-gray-50 rounded-xl p-4">
                                     <div class="text-center">
                                         <p class="text-sm text-gray-700 font-medium">Paket Terima Beres + Instalasi</p>
                                     </div>
@@ -405,7 +404,7 @@
                             <!-- Action Button -->
                             <div class="text-center mt-6">
                                 <button onclick="generateWhatsAppLink('<?= $item->nama_produk ?>', <?= ($item->is_promo && $item->harga_promo) ? $item->harga_promo : $item->harga ?>)"
-                                    class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold text-lg flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                    class="w-full bg-green-500 text-white py-4 px-6 rounded-xl hover:bg-green-600 transition-all duration-200 font-semibold text-lg flex items-center justify-center">
                                     <i class="ri-whatsapp-line mr-3 text-xl"></i>
                                     Order Now
                                 </button>

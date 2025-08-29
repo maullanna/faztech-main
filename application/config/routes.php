@@ -37,6 +37,11 @@ $route['admin/produk'] = 'produk/admin';
 $route['admin/produk/tambah'] = 'produk/tambah';
 $route['admin/produk/edit/(:num)'] = 'produk/edit/$1';
 $route['admin/produk/hapus/(:num)'] = 'produk/hapus/$1';
+$route['admin/produk/import'] = 'produk/import';
+$route['admin/produk/download_template'] = 'produk/download_template';
+$route['admin/produk/process_import'] = 'produk/process_import';
+
+
 
 // Admin routes - Testimoni
 $route['admin/testimoni'] = 'testimoni/admin';

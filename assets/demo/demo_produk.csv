@@ -1,0 +1,13 @@
+nama_produk,kategori,harga,kualitas,garansi,instalasi,support,maintenance,is_promo,harga_promo,promo_label,deskripsi,gambar
+Paket CCTV Basic,CCTV,2500000,Kualitas Standard,Garansi 1 Tahun,Instalasi Berbayar,Support 8 Jam,Maintenance Berbayar,0,,,Paket CCTV 4 kamera dengan DVR 4 channel untuk kebutuhan rumah tangga,cctv_basic.jpg
+Paket CCTV Business,CCTV,4000000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 16 Jam,Maintenance Berkala,1,3600000,Promo Bisnis,Paket CCTV 8 kamera HD dengan DVR 8 channel untuk bisnis kecil,cctv_business.jpg
+Paket CCTV Enterprise,CCTV,8000000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Berkala,0,,,Paket CCTV 16 kamera IP dengan NVR untuk perusahaan besar,cctv_enterprise.jpg
+Access Control Fingerprint,Access Control,2000000,Kualitas Standard,Garansi 1 Tahun,Instalasi Berbayar,Support 8 Jam,Maintenance Berbayar,1,1800000,Promo Awal Tahun,Sistem kontrol akses dengan fingerprint untuk 100 user,access_fingerprint.jpg
+Access Control Card,Access Control,1500000,Kualitas Standard,Garansi 1 Tahun,Instalasi Berbayar,Support 8 Jam,Maintenance Berbayar,0,,,Sistem kontrol akses dengan card reader untuk 50 user,access_card.jpg
+Access Control Hybrid,Access Control,3000000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 16 Jam,Maintenance Berkala,0,,,Sistem kontrol akses hybrid fingerprint + card untuk 200 user,access_hybrid.jpg
+Barrier Gate Single,Barrier Gate,1800000,Kualitas Standard,Garansi 1 Tahun,Instalasi Berbayar,Support 8 Jam,Maintenance Berbayar,0,,,Barrier gate tunggal dengan remote control untuk parkiran kecil,barrier_single.jpg
+Barrier Gate Double,Barrier Gate,3200000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 16 Jam,Maintenance Berkala,1,2880000,Promo Spesial,Barrier gate ganda dengan sistem otomatis untuk parkiran besar,barrier_double.jpg
+Internet Dedicated 10Mbps,Internet Dedicated,800000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Gratis,0,,,Koneksi internet dedicated 10Mbps dengan bandwidth stabil,internet_10mbps.jpg
+Internet Dedicated 50Mbps,Internet Dedicated,1500000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Gratis,1,1350000,Promo Bisnis,Koneksi internet dedicated 50Mbps untuk kebutuhan bisnis,internet_50mbps.jpg
+Smart Home Basic,Smart Solution,5000000,Kualitas Standard,Garansi 1 Tahun,Instalasi Berbayar,Support 8 Jam,Maintenance Berbayar,0,,,Paket smart home dasar dengan 5 device IoT,smart_basic.jpg
+Smart Home Premium,Smart Solution,10000000,Kualitas Premium,Garansi Resmi,Instalasi Gratis,Support 24/7,Maintenance Berkala,1,9000000,Promo Smart Home,Paket smart home lengkap dengan 15 device IoT dan sistem otomasi,smart_premium.jpg
