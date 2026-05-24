@@ -56,7 +56,7 @@ The website serves as both a **company profile** and a **product catalog platfor
 
 | Layer | Technology |
 |---|---|
-| **Backend** | PHP 8.0, CodeIgniter 3.x |
+| **Backend** | PHP 7.4+, CodeIgniter 3.x |
 | **Frontend** | HTML5, CSS3, JavaScript, Bootstrap |
 | **Database** | MySQL 8.0 |
 | **UI Design** | Custom design from scratch (no template) |
@@ -106,7 +106,7 @@ faztech-main/
 ## ⚙️ Installation
 
 ### Prerequisites
-- PHP 8.0+
+- PHP 7.4+
 - MySQL 8.0
 - Apache/Nginx web server
 - Composer (optional)
