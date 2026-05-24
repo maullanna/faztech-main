@@ -3,7 +3,7 @@
 > A full-stack company profile and e-commerce website for **FazTech Solution**, a professional security systems provider based in Bekasi, West Java. Built from scratch — from UI design to production deployment.
 
 [![CodeIgniter](https://img.shields.io/badge/CodeIgniter-3.x-EF4223?style=flat&logo=codeigniter&logoColor=white)](https://codeigniter.com)
-[![PHP](https://img.shields.io/badge/PHP-7.4+-777BB4?style=flat&logo=php&logoColor=white)](https://php.net)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)](https://mysql.com)
 [![Status](https://img.shields.io/badge/Status-Live-brightgreen)](https://faztechcctv.com)
 [![Role](https://img.shields.io/badge/Role-Solo%20Developer%20%26%20Designer-blue)](https://maullanna.github.io/Portofolio)
@@ -56,7 +56,7 @@ The website serves as both a **company profile** and a **product catalog platfor
 
 | Layer | Technology |
 |---|---|
-| **Backend** | PHP 7.4+, CodeIgniter 3.x |
+| **Backend** | PHP 8.2+, CodeIgniter 3.x |
 | **Frontend** | HTML5, CSS3, JavaScript, Bootstrap |
 | **Database** | MySQL 8.0 |
 | **UI Design** | Custom design from scratch (no template) |
@@ -106,7 +106,7 @@ faztech-main/
 ## ⚙️ Installation
 
 ### Prerequisites
-- PHP 7.4+
+- PHP 8.2+
 - MySQL 8.0
 - Apache/Nginx web server
 - Composer (optional)
