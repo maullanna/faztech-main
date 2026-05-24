@@ -1,71 +1,210 @@
-###################
-What is CodeIgniter
-###################
+# FazTech — Security Solutions Company Website
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+> A full-stack company profile and e-commerce website for **FazTech Solution**, a professional security systems provider based in Bekasi, West Java. Built from scratch — from UI design to production deployment.
 
-*******************
-Release Information
-*******************
+[![CodeIgniter](https://img.shields.io/badge/CodeIgniter-3.x-EF4223?style=flat&logo=codeigniter&logoColor=white)](https://codeigniter.com)
+[![PHP](https://img.shields.io/badge/PHP-7.4+-777BB4?style=flat&logo=php&logoColor=white)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)](https://mysql.com)
+[![Status](https://img.shields.io/badge/Status-Live-brightgreen)](https://faztechcctv.com)
+[![Role](https://img.shields.io/badge/Role-Solo%20Developer%20%26%20Designer-blue)](https://maullanna.github.io/Portofolio)
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+---
 
-**************************
-Changelog and New Features
-**************************
+## 🌐 Live Website
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+**[faztechcctv.com](https://faztechcctv.com)** — Currently live and actively used by the client.
 
-*******************
-Server Requirements
-*******************
+---
 
-PHP version 5.6 or newer is recommended.
+## 📌 Overview
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+FazTech is a full-stack web project developed independently for a CCTV and security systems business client. I handled the entire project lifecycle — from requirements gathering, UI/UX design, backend development, to production deployment on a live hosting environment.
 
-************
-Installation
-************
+The website serves as both a **company profile** and a **product catalog platform** with an inquiry/order system, connected to a full admin panel for content management.
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+---
 
-*******
-License
-*******
+## ✨ Features
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+### Public Website
+| Feature | Description |
+|---|---|
+| 🏠 **Landing Page** | Hero section, company highlights, featured packages |
+| 📦 **Product Catalog** | Categorized products (CCTV, CCTV WiFi, Access Control, Barrier Gate, Smart Solution) |
+| 🛒 **Order Form** | Customer inquiry & order submission form with property type selection |
+| 🖼️ **Portfolio Gallery** | Visual documentation of completed installation projects |
+| ⭐ **Testimonials** | Customer reviews with photo |
+| 👤 **Company Profile** | About page with company background |
+| ❓ **FAQ Section** | Common questions with expandable answers |
+| 📞 **Contact & WhatsApp** | Direct WhatsApp integration for quick consultation |
+| 📱 **Responsive Design** | Fully responsive across mobile, tablet, and desktop |
 
-*********
-Resources
-*********
+### Admin Panel
+| Feature | Description |
+|---|---|
+| 📦 **Product Management** | Add, edit, delete products with image upload |
+| 🗂️ **Category Management** | Manage product categories |
+| 🛒 **Order Management** | View and manage incoming customer orders |
+| 🖼️ **Gallery Management** | Upload and manage portfolio/job photos |
+| ⭐ **Testimonial Management** | Manage customer testimonials with photos |
+| ❓ **FAQ Management** | Add and edit FAQ content |
+| 🔐 **Admin Authentication** | Secure login for admin access |
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+---
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+## 🛠️ Tech Stack
 
-***************
-Acknowledgement
-***************
+| Layer | Technology |
+|---|---|
+| **Backend** | PHP 8.0, CodeIgniter 3.x |
+| **Frontend** | HTML5, CSS3, JavaScript, Bootstrap |
+| **Database** | MySQL 8.0 |
+| **UI Design** | Custom design from scratch (no template) |
+| **Deployment** | Shared Hosting / VPS |
+| **Version Control** | Git & GitHub |
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+---
+
+## 🗂️ Project Structure
+
+```
+faztech-main/
+├── application/
+│   ├── controllers/
+│   │   ├── Home.php              # Landing page controller
+│   │   ├── Produk.php            # Product catalog
+│   │   ├── Pekerjaan.php         # Portfolio/jobs gallery
+│   │   ├── Testimoni.php         # Customer testimonials
+│   │   ├── Profile.php           # Company profile
+│   │   └── Admin/                # Admin panel controllers
+│   │       ├── Dashboard.php
+│   │       ├── Products.php
+│   │       ├── Orders.php
+│   │       ├── Gallery.php
+│   │       └── Testimonials.php
+│   ├── models/
+│   │   ├── Product_model.php
+│   │   ├── Order_model.php
+│   │   ├── Gallery_model.php
+│   │   └── Testimonial_model.php
+│   └── views/
+│       ├── home/                 # Public pages
+│       └── admin/                # Admin panel pages
+├── assets/
+│   ├── img/                      # Static images
+│   ├── css/                      # Custom stylesheets
+│   └── js/                       # Custom scripts
+├── uploads/
+│   ├── products/                 # Product images
+│   ├── jobs/                     # Portfolio photos
+│   └── testimonials/             # Testimonial photos
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+- PHP 8.0+
+- MySQL 8.0
+- Apache/Nginx web server
+- Composer (optional)
+
+### Setup
+
+```bash
+# Clone repository
+git clone https://github.com/maullanna/faztech-main.git
+cd faztech-main
+```
+
+### Database Configuration
+
+Edit `application/config/database.php`:
+
+```php
+$db['default'] = array(
+    'hostname' => 'localhost',
+    'username' => 'your_db_user',
+    'password' => 'your_db_password',
+    'database' => 'faztech_db',
+    'dbdriver' => 'mysqli',
+);
+```
+
+### Base URL Configuration
+
+Edit `application/config/config.php`:
+
+```php
+$config['base_url'] = 'http://localhost/faztech-main/';
+```
+
+### Import Database
+
+```bash
+mysql -u root -p faztech_db < database/faztech_db.sql
+```
+
+### Run
+
+```bash
+# Using PHP built-in server
+php -S localhost:8000
+
+# Or configure Apache/Nginx virtual host
+```
+
+---
+
+## 🔐 Security
+
+- **CSRF Protection** — Enabled on all form submissions
+- **XSS Prevention** — Input filtering on all user inputs via CodeIgniter's Security class
+- **SQL Injection Prevention** — Active Record / Query Builder for all database queries
+- **Admin Authentication** — Session-based authentication with login protection on all admin routes
+- **File Upload Validation** — File type and size validation on all image uploads
+
+---
+
+## 📱 Pages Overview
+
+| Route | Page |
+|---|---|
+| `/` | Landing page with hero, features, packages, gallery, testimonials, FAQ, contact |
+| `/produk` | Full product catalog |
+| `/kategori/:slug` | Products filtered by category |
+| `/pekerjaan` | Portfolio / installation gallery |
+| `/testimoni` | Customer testimonials |
+| `/profile` | Company profile |
+| `/admin` | Admin login |
+| `/admin/dashboard` | Admin dashboard |
+| `/admin/products` | Product management |
+| `/admin/orders` | Order management |
+
+---
+
+## 🎨 Design
+
+- Designed from scratch — no premium templates used
+- Custom color scheme matching FazTech brand identity
+- Mobile-first responsive layout
+- WhatsApp floating button for direct customer contact
+- Online status indicator for live customer support feel
+
+---
+
+## 👨‍💻 Developer
+
+**Yusuf Maulana** — Solo Developer & UI Designer
+
+- 🌐 Portfolio: [maullanna.github.io/Portofolio](https://maullanna.github.io/Portofolio)
+- 💼 LinkedIn: [linkedin.com/in/yusuf-maulana-a3888736a](https://www.linkedin.com/in/yusuf-maulana-a3888736a)
+- 📧 Email: maullanna35@gmail.com
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. The original CodeIgniter framework is licensed under the [MIT License](https://opensource.org/licenses/MIT).
